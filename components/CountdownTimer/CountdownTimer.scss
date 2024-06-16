@@ -1,17 +1,21 @@
 @use '../../styles/breakpoints' as *;
 @use '../../styles/variables' as *;
-
-
 .timer {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.3rem;
+    grid-template-columns: repeat(3, 1fr); // Modifier pour 3 colonnes sur mobile
+    gap: 0.1rem;
+margin-left: 10%;
 
     @include breakpoint-768 {
-        gap: 2rem;
+        grid-template-columns: repeat(6, 1fr); // Retour à 6 colonnes sur tablette et plus grand
+        gap: 1rem;
+    }
 
+    @include breakpoint-375 {
+        gap: 0.2rem; // Espacement réduit pour les écrans encore plus petits
     }
 }
+
 
 span {
     display: block;
@@ -21,9 +25,9 @@ span {
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    place-content: center;
-    justify-content: center; 
-    align-items: center;
+    place-content: center; /* Centrage des enfants selon le grid */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
     gap: .625rem;
 
     @include breakpoint-768 {
@@ -58,7 +62,7 @@ span {
             position: absolute;
             top: 46%;
             left: -5%;
-            width: .375rem;
+
             height: .375rem;
             border-radius: 100%;
             background-color: $very-dark-mostly-black-blue;
@@ -88,8 +92,8 @@ span {
 
     &-visual {
         position: relative;
-        width: 4.375rem;
-        height: 4.375rem;
+        width: 4.375rem; /* Réduire la largeur du visuel pour mobile */
+        height: 4.375rem; /* Réduire la hauteur du visuel pour mobile */
         border-radius: .5rem;
         background-color: $dark-desaturated-blue;
         box-shadow: 0 5px 0 0px black;
@@ -101,7 +105,7 @@ span {
     }
 
     &-num {
-        font-size: 2.25rem;
+        font-size: 2.25rem; /* Réduire la taille de la police pour le numéro pour mobile */
         font-weight: $font-weight;
         color: $soft-red;
         letter-spacing: -0.0675rem;
@@ -122,9 +126,10 @@ span {
     &-val {
         color: white;
         text-transform: uppercase;
-        font-size: .4375rem;
+        font-size: .4375rem; /* Réduire la taille de la police pour la valeur pour mobile */
         font-weight: $font-weight;
         letter-spacing: .185rem;
+        margin-right: 40%;
 
         @include breakpoint-768 {
             font-size: .875rem;

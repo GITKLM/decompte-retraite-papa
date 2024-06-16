@@ -17,7 +17,7 @@ body {
     position: relative; /* Important pour le positionnement de ::before */
     margin: 0; /* Pour s'assurer qu'il n'y a pas de marges autour du body */
     padding: 0; /* Pour s'assurer qu'il n'y a pas de padding autour du body */
-    height: 100vh;
+    height:100vh;
 
     @include breakpoint-768 {
         height: fit-content;

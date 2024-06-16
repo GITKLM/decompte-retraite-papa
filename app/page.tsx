@@ -9,7 +9,7 @@ const today = new Date();
 let target = new Date(today)
 target.setDate(target.getDate() + 2480)
 
-const timerLabels = ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
+const timerLabels = ['années', 'mois', 'jours', 'heures', 'minutes', 'secondes']
 
 export default function Home() { 
 

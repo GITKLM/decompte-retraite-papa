@@ -1,0 +1,85 @@
+@use 'variables' as *;
+@use 'breakpoints' as *;
+
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    grid-template-rows: 8.75rem 1fr auto;
+    font-size: .875rem;
+    perspective: 1000px;
+    position: relative; /* Important pour le positionnement de ::before */
+    margin: 0; /* Pour s'assurer qu'il n'y a pas de marges autour du body */
+    padding: 0; /* Pour s'assurer qu'il n'y a pas de padding autour du body */
+    height: 100vh;
+
+    @include breakpoint-768 {
+        height: fit-content;
+    }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pexels-cottonbro-3171837.jpg');
+    background-size: cover;
+    opacity: 0.8; /* Réglez l'opacité souhaitée ici */
+    z-index: -1; /* Place l'image de fond derrière le contenu du body */
+}
+
+
+main {
+    width: inherit;
+    text-align: center;
+    margin: auto;
+    grid-row: 2 / 3;
+    padding-bottom: 10.1875rem;
+
+    @include breakpoint-768 {
+        padding-bottom: 9.4375rem;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-weight: $font-weight;
+        color: white;
+        letter-spacing: .3837rem;
+        padding-bottom: 3.375rem;
+
+        @include breakpoint-768 {
+            font-size: 4.375rem;
+            padding-bottom: 6.5rem;
+        }
+    }
+    h2 {
+        margin-top: 4rem;
+        color: $soft-red;
+    }
+    h3 {
+        margin-top: 4rem;
+        color: white;
+    }
+
+  .deux-ans{
+    margin-top: 30px;
+    font-weight: bold;
+  }
+    .aller-mieux{
+
+padding-top: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
